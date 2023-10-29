@@ -1,70 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { log } from 'console';
-import React from 'react';
+
+import Spinner from "./Spinner";
 
 import './../css/content.css';
 
-// import API from './components/API';
-
-type moviesResultProps = {
-  name: string;
-  _id: string;
-};
-
-type charactersResultProps = {
-  name: string;
-  race: string;
-  _id: string;
-};
-
-type quotesResultProps = {
-  character: string;
-  dialog: string;
-  _id: string;
-}
-
-function Content() {
-
-  const [moviesResult, setMoviesResult] = useState<moviesResultProps[]>([]);
-  const [charactersResult, setCharactersResult] = useState<charactersResultProps[]>([]);
-  const [quotesResult, setQuotesResult] = useState<quotesResultProps[]>([]);
-  // 🔥 Maybe to make this more dynamic, we just have one results with sub.results???
-  // I think you can useState to only update prop.movies etc...
-
-  useEffect(() => {
-    const api = async (endPoint: string) => {
-      const data = await fetch("https://the-one-api.dev/v2/"+endPoint+"?limit=10", {
-        method: "GET",
-        headers: { 
-          Authorization: "Bearer "+process.env.REACT_APP_LOR_API_TOKEN
-        }
-      });
-      const jsonData = await data.json();
-      console.log("jsonData: ", jsonData)
-      switch(endPoint) {
-        case "movie":
-          setMoviesResult(jsonData.docs);
-          break;
-        case "character":
-          setCharactersResult(jsonData.docs);
-          break;
-        case "quote":
-          setQuotesResult(jsonData.docs);
-          break;
-      }
-    };
-
-    api('movie');
-    api('character');
-    api('quote');
-
-  }, []);
+function Content({ 
+  page,
+  loading,
+  moviesResult, 
+  charactersResult,
+  quotesResult,
+}: { 
+  page: string,
+  loading: boolean,
+  moviesResult: Array<any>, 
+  charactersResult: Array<any>, 
+  quotesResult: Array<any> 
+}) {
 
   return (
     <div className="Content">
-      <h3>- api (Lord of the Rings API Example)</h3>
 
-      <div>
+      { page === "movie" &&
+        <div>
         <h4>🍿 movies</h4>
         {moviesResult.map((value, key) => {
           return (
@@ -75,35 +34,45 @@ function Content() {
           );
         })}
       </div>
+      }
 
-      <div>
-        <h4>🧙‍♂️ characters</h4>
-        {charactersResult.map((value, key) => {
-          return (
-            <div key={key}>
-              <div>name: {value.name}</div>
-              <div>race: {value.race}</div>
-              <hr />
-            </div>
-          );
-        })}
-      </div>
+      { page === "character" &&
+        <div>
+          <h4>🧙‍♂️ characters</h4>
+          {charactersResult.map((value, key) => {
+            return (
+              <div key={key}>
+                <div>name: {value.name}</div>
+                <div>race: {value.race}</div>
+                <hr />
+              </div>
+            );
+          })}
+        </div>
+      }
 
-      <div>
-        <h4>🧙‍♂️ quotes</h4>
-        {quotesResult.map((value, key) => {
-          return (
-            <div key={key}>
-              {/* <div>character: {value.character}</div> */}
-              <div>dialog: {value.dialog}</div>
-              <hr />
-            </div>
-          );
-        })}
+      { page === "quote" &&
+        <div>
+          <h4>🧙‍♂️ quotes</h4>
+          {quotesResult.map((value, key) => {
+            return (
+              <div key={key}>
+                {/* <div>character: {value.character}</div> */}
+                <div>dialog: {value.dialog}</div>
+                <hr />
+              </div>
+            );
+          })}
+        </div>
+      }
+
+      <div className={"pos-center " +(loading ? 'show' : 'hide' )}>
+        <Spinner />
       </div>
 
     </div>
   );
+
 }
 
-export default Content;
+export default Content

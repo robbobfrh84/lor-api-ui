@@ -1,11 +1,48 @@
 .Content {
   text-align: left;
   width: 100%;
-  margin-left: 20px;
+  /* margin-left: 20px;
+  margin-right: 20px; */
   padding: 5px;
 }
 
 h3, h4 {
   margin: 5px;
   margin-left: 0px;
+}
+
+.pos-center {
+  position: fixed;
+  left: calc(50% - 57px);
+}
+
+.show {
+  display: initial;
+}
+
+.hide {
+  display: none;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+.red {
+  border-top: 10px solid red;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
