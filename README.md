@@ -1,46 +1,90 @@
-# Getting Started with Create React App
+# LibLab Take-Home Project - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello LibLab team 👋,
 
-## Available Scripts
+Thank you so much for giving me the opportunity to showcase my skills and for reviewing my project. It was a lot of fun, although I didn't get to take it as far as I would have liked. But such is the life of coding 🧘.
 
-In the project directory, you can run: 
+You can visit the live link to my project here:
 
-### `npm start`
+- https://robbobfrh84.github.io/lor-api-ui/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+And you can find the repository that hosts the code here:
+- https://github.com/robbobfrh84/lor-api-ui
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+----
 
-### `npm test`
+## Developing Locally 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Clone My Code and Install Dependencies
 
-### `npm run build`
+To get my project working locally, in the Terminal, you'll need to pull down the `dev` branch that I've pushed my changes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once you have the project source code cloned on your computer, make sure you're inside the folder's root directory and run:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This will start the process of installing all the dependencies and get your app ready to run.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Add Your API Access Token
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Please visit the API's website, sign up, and copy your API Access token.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Website: https://the-one-api.dev/
 
-## Learn More
+In the root directory of the project, you should find a folder named `.env.template`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Change the name of the file to just `.env`
+- Now, replace "REPLACE_WITH_LOR_API_TOKEN" with the API Access token **you** copied from the website.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Run Code locally
+
+To run the project locally, in your Terminal at the root directory of the project, run:
+
+- `npm start`
+
+Hopefully, this will open a browser window where you'll see the project's home page.
+
+- If not, please let me know if you're having any problems at [bobmain49@gmail.com](mailto:bobmain49@gmail.com).
+
+----
+
+## Testing the Web App. 
+
+Once the local web app has loaded in your browser, you should see:
+
+- A title: "🌋 Lord of the Rings 🏔️"
+- A sub-title: "❧ The One API - UI ❧"
+- Three buttons: "Movies," "Characters," and "Quotes"
+
+Clicking on the "Movies" button should display all the Lord of the Rings movies in a table list below.
+
+- You should also see a loading wheel that activates once the button is pressed and disappears once the table is populated.
+- The table should have alternating gray and white backgrounds for clarity.
+
+This process should be repeated by selecting both the "Characters" and "Quotes" buttons, with their corresponding table data as well.
+
+- Note: The "Characters" table should display two columns of information: "Name" and "Race."
+
+Clicking on a button a second time should not require an additional request, which you can confirm by observing that there is no delay and no loading wheel reappears.
+
+
+
+# Reflections
+
+I have had many thoughts and learnings throughout the process of building this app. Although time was short, I am proud of what I have been able to accomplish! I hope to have the opportunity to share it with you and hear your thoughts as well.
+
+
+
+Until then, take care,
+
+- Bob
+
+
+
+
+
+
+
+
