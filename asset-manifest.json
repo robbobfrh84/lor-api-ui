@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/lor-api-ui/static/css/main.b72a0b90.css",
-    "main.js": "/lor-api-ui/static/js/main.dfb89774.js",
+    "main.css": "/lor-api-ui/static/css/main.9404d3ff.css",
+    "main.js": "/lor-api-ui/static/js/main.ee8b7760.js",
     "static/js/787.bf03da96.chunk.js": "/lor-api-ui/static/js/787.bf03da96.chunk.js",
     "index.html": "/lor-api-ui/index.html",
-    "main.b72a0b90.css.map": "/lor-api-ui/static/css/main.b72a0b90.css.map",
-    "main.dfb89774.js.map": "/lor-api-ui/static/js/main.dfb89774.js.map",
+    "main.9404d3ff.css.map": "/lor-api-ui/static/css/main.9404d3ff.css.map",
+    "main.ee8b7760.js.map": "/lor-api-ui/static/js/main.ee8b7760.js.map",
     "787.bf03da96.chunk.js.map": "/lor-api-ui/static/js/787.bf03da96.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b72a0b90.css",
-    "static/js/main.dfb89774.js"
+    "static/css/main.9404d3ff.css",
+    "static/js/main.ee8b7760.js"
   ]
 }
