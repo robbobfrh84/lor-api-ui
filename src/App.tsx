@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 import API from './components/API';
@@ -36,14 +36,6 @@ function App() {
   const [moviesResult, setMoviesResult] = useState<moviesResultProps[]>([]);
   const [charactersResult, setCharactersResult] = useState<charactersResultProps[]>([]);
   const [quotesResult, setQuotesResult] = useState<quotesResultProps[]>([]);
-
-  // useEffect(() => {
-  //   setRequestTrack({
-  //     movie: false,
-  //     character: true,
-  //     quote: false
-  //   })
-  // }, []);
 
   const updateContent = ( endPoint: string ) => {
     switch(endPoint) {

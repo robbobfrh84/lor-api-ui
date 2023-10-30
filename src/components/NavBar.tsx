@@ -1,4 +1,4 @@
-import { MouseEvent, Dispatch, SetStateAction } from 'react';
+import { MouseEvent } from 'react';
 import './../css/navBar.css';
 
 function NavBar({ 
@@ -11,22 +11,46 @@ function NavBar({
 
   const buttonHandler = (event: MouseEvent) => {
     event.preventDefault();
-    const name = event.currentTarget.getAttribute('name')
+    const name = event.currentTarget.getAttribute('name');
     setPage(name);
     updateContent(name);
   };
 
   return (
     <div className="NavBar">
-      <h1>🧙‍♂️ Lord of the Rings 💍</h1>
-      <h3>The One API - UI</h3>
-      <hr />
-      <nav>
-        <button onClick={buttonHandler} name="movie">Movies</button> &nbsp;
-        <button onClick={buttonHandler} name="character">Characters</button> &nbsp;
-        <button onClick={buttonHandler} name="quote">Quotes</button> &nbsp;
+
+      <h1>🌋 Lord of the Rings 🏔️</h1>
+
+      <h3> ❧ The One API - UI ❧</h3>
+
+      <nav className="buttons-container">
+
+        <div className="button-container">
+          <button 
+            className="btn gold" 
+            onClick={buttonHandler} 
+            name="movie"
+          >🍿 &nbsp;Movies&nbsp; 🎥</button>
+        </div>
+
+        <div className="button-container">
+          <button 
+            className="btn blue" 
+            onClick={buttonHandler} 
+            name="character"
+          >🧙‍♂️ &nbsp;Characters&nbsp; 🧝‍♀️</button>
+        </div>
+
+        <div className="button-container">
+          <button 
+            className="btn green" 
+            onClick={buttonHandler} 
+            name="quote"
+          >❛❛ Quotes ❜❜</button>
+        </div>
+
       </nav>
-      <hr />
+      {/* <hr /> */}
     </div>
   );
 }

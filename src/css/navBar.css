@@ -1,1 +1,55 @@
-/* navBar.css */
+.buttons-container {
+  max-width: 800px;
+  margin: auto;
+  display: flex; 
+  justify-content: space-between; 
+  flex-wrap: wrap; 
+}
+
+.button-container {
+  padding: 10px;
+}
+
+.btn {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  background-color: rgba(0,0,255,0.1);
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.btn:hover {
+  background-color: rgba(0,0,255,0.3);
+  transition: background-color .3s;
+}
+
+.btn.gold {
+  background-color:  rgba(184,134,11,0.3)
+}
+
+.btn.gold:hover {
+  background-color:  rgba(184,134,11,0.6)
+}
+
+.btn.green {
+  background-color:  rgba(0,120,0,0.2)
+}
+
+.btn.green:hover {
+  background-color:  rgba(0,120,0,0.5)
+}
+
+
+@media (max-width: 700px) {
+  .buttons-container {
+    display: Block 
+  }
+  .btn {
+    width: 300px;
+  }
+}
